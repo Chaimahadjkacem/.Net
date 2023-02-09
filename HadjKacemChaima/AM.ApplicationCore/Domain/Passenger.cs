@@ -33,13 +33,13 @@ namespace AM.ApplicationCore.Domain
 
         //    return nom == LastName && prenom == FirstName && email == EmailAddress;
         //}
-        public bool CheckProfile(string prenom, string nom, string email)
+        public bool CheckProfile(string prenom, string nom, string email = null)
         {
-            if (nom == LastName && prenom == FirstName)
-                return true;
-            else if (nom == LastName && prenom == FirstName && email == EmailAddress)
-                return true;
-            else return false;
+            if (email == null)
+            {
+                return nom == LastName && prenom == FirstName
+            }
+            return nom == LastName && prenom == FirstName && email == EmailAddress;
 
         }
 

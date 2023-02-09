@@ -8,8 +8,8 @@ namespace AM.ApplicationCore.Domain
 {
     public enum PlaneType
     {
-        Boing,
-        Airbus
+        Boing, 
+        Airbus 
     }
     public class Plane
     {

@@ -1,7 +1,11 @@
 ﻿//// See https://aka.ms/new-console-template for more information
 //Console.WriteLine("Hello, World!");
 
+using System.Collections;
+using System.Collections.Generic;
 using AM.ApplicationCore.Domain;
+using AM.ApplicationCore.Interfaces;
+using AM.ApplicationCore.Service;
 
 Plane p = new Plane();
 
@@ -33,6 +37,15 @@ pas1.PassengerType();
 
 Passenger pas2 = new Traveller();
 pas2.PassengerType();
+
+
+//TP2
+// 5  Lezem f declaration nhotou Classe moush interface
+ServiceFlight serviceFlight = new ServiceFlight();
+serviceFlight.Flights = TestData.Flights;
+
+
+
 
 
 

@@ -7,42 +7,74 @@ using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Interfaces;
 using AM.ApplicationCore.Service;
 
-Plane p = new Plane();
+//Plane p = new Plane();
 
-p.PlaneId = 1;
-p.Capacity = 100;
-p.ManufactureDate = DateTime.Now;
-p.PlaneType = PlaneType.Boing;
+//p.PlaneId = 1;
+//p.Capacity = 100;
+//p.ManufactureDate = DateTime.Now;
+//p.PlaneType = PlaneType.Boing;
 
-Console.WriteLine(p);
+//Console.WriteLine(p);
 
 //Plane p2 = new Plane(200 , new DateTime (2023,01,03) , PlaneType.Airbus);
 //Console.WriteLine(p2);
 
-Plane p3 = new Plane()
-{
+//Plane p3 = new Plane()
+//{
 
-    Capacity = 100,
-    ManufactureDate = DateTime.Now,
-    PlaneType = PlaneType.Boing
+//    Capacity = 100,
+//    ManufactureDate = DateTime.Now,
+//    PlaneType = PlaneType.Boing
 
-};
-Console.WriteLine(p3); // Rq : L'ordre dans le constructeur n'est pas important ! 
+//};
+//Console.WriteLine(p3); // Rq : L'ordre dans le constructeur n'est pas important ! 
 
-Passenger pas = new Passenger();
-pas.PassengerType();
+//Passenger pas = new Passenger();
+//pas.PassengerType();
 
-Passenger pas1 = new Staff();
-pas1.PassengerType();
+//Passenger pas1 = new Staff();
+//pas1.PassengerType();
 
-Passenger pas2 = new Traveller();
-pas2.PassengerType();
+//Passenger pas2 = new Traveller();
+//pas2.PassengerType();
 
 
 //TP2
 // 5  Lezem f declaration nhotou Classe moush interface
 ServiceFlight serviceFlight = new ServiceFlight();
 serviceFlight.Flights = TestData.Flights;
+
+//Methodes anonymes
+ServiceFlight ServiceFlight = new ServiceFlight();
+serviceFlight.Flights = TestData.Flights;
+
+serviceFlight.GetFlights("Paris", delegate (Flight f, String c)
+{
+    return f.Destination == c;
+});
+
+//expression lampda (fi outh delegate twali " => " )
+serviceFlight.GetFlights("2023/01/01", (Flight f, String c) =>
+{
+    return f.FlightDate.Equals(c);
+});
+
+
+
+// Question 16 et 17
+Action<Plane> FlightDetailsDel = serviceFlight.ShowFlightDetails;
+FlightDetailsDel(TestData.Planes[1]);
+
+Func<String, double> DurationAverageDel = serviceFlight.DurationAverage;
+Console.WriteLine(DurationAverageDel("Paris"));
+
+
+//expression lampda (Question 18)
+//ServiceFlight.ShowFlightDetails( (Plane p) =>
+//{
+//    Console.WriteLine(p);
+//});
+
 
 
 

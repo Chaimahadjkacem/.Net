@@ -10,3 +10,15 @@ C:\Users\Admin\source\repos\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\
 C:\Users\Admin\source\repos\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\refint\AM.ApplicationCore.dll
 C:\Users\Admin\source\repos\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.pdb
 C:\Users\Admin\source\repos\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\ref\AM.ApplicationCore.dll
+D:\c#\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.csproj.AssemblyReference.cache
+D:\c#\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.AssemblyInfoInputs.cache
+D:\c#\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.AssemblyInfo.cs
+D:\c#\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.csproj.CoreCompileInputs.cache
+D:\c#\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.dll
+D:\c#\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\refint\AM.ApplicationCore.dll
+D:\c#\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\AM.ApplicationCore.pdb
+D:\c#\HadjKacemChaima\AM.ApplicationCore\bin\Debug\net6.0\AM.ApplicationCore.deps.json
+D:\c#\HadjKacemChaima\AM.ApplicationCore\bin\Debug\net6.0\AM.ApplicationCore.dll
+D:\c#\HadjKacemChaima\AM.ApplicationCore\bin\Debug\net6.0\AM.ApplicationCore.pdb
+D:\c#\HadjKacemChaima\AM.ApplicationCore\obj\Debug\net6.0\ref\AM.ApplicationCore.dll

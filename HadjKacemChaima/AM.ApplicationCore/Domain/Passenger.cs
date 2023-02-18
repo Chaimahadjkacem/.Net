@@ -37,7 +37,7 @@ namespace AM.ApplicationCore.Domain
         {
             if (email == null)
             {
-                return nom == LastName && prenom == FirstName
+                return nom == LastName && prenom == FirstName;
             }
             return nom == LastName && prenom == FirstName && email == EmailAddress;
 

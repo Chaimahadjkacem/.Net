@@ -12,12 +12,14 @@ namespace AM.ApplicationCore.Domain
         {
             new Plane()
             {
+                PlaneId= 1,
                 PlaneType=PlaneType.Boing, //indice 0
                 Capacity =150,
                 ManufactureDate = new DateTime(2015,02,03)
             },
              new Plane()
             {
+                 PlaneId= 2,
                  PlaneType=PlaneType.Airbus, // indice 1
                 Capacity =250,
                 ManufactureDate = new DateTime(2020,11,11)
@@ -110,6 +112,7 @@ namespace AM.ApplicationCore.Domain
         {
             new Flight()
             {
+               
               FlightDate= new DateTime(2022,01,01,15,10,10),
               Destination ="Paris",
               EffectiveArrival=new DateTime(2022,02,01,17,10,10),
@@ -119,6 +122,7 @@ namespace AM.ApplicationCore.Domain
             },
              new Flight()
             {
+                 
               FlightDate= new DateTime(2022,02,01,21,10,10),
               Destination ="Paris",
               EffectiveArrival=new DateTime(2022,02,01,23,10,10),
@@ -128,6 +132,7 @@ namespace AM.ApplicationCore.Domain
             },
              new Flight()
             {
+                
               FlightDate= new DateTime(2022,03,01,05,10,10),
               Destination ="Paris",
               EffectiveArrival=new DateTime(2022,03,01,06,40,10),
@@ -136,6 +141,7 @@ namespace AM.ApplicationCore.Domain
             },
              new Flight()
             {
+                 
               FlightDate= new DateTime(2022,04,01,06,10,10),
               Destination ="Madrid",
               EffectiveArrival=new DateTime(2022,04,01,08,10,10),
@@ -144,6 +150,8 @@ namespace AM.ApplicationCore.Domain
             },
             new Flight()
             {
+
+                
               FlightDate= new DateTime(2022,05,01,17,10,10),
               Destination ="Madrid",
               EffectiveArrival=new DateTime(2022,05,01,18,50,10),
@@ -153,6 +161,8 @@ namespace AM.ApplicationCore.Domain
             },
             new Flight()
             {
+
+                
               FlightDate= new DateTime(2022,06,01,20,10,10),
               Destination ="Lisbonne",
               EffectiveArrival=new DateTime(2022,06,01,22,30,10),

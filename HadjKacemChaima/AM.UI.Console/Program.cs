@@ -29,7 +29,7 @@ using AM.ApplicationCore.Service;
 //};
 //Console.WriteLine(p3); // Rq : L'ordre dans le constructeur n'est pas important ! 
 
-//Passenger pas = new Passenger();
+Passenger pas = new Passenger();
 //pas.PassengerType();
 
 //Passenger pas1 = new Staff();
@@ -48,32 +48,32 @@ serviceFlight.Flights = TestData.Flights;
 ServiceFlight ServiceFlight = new ServiceFlight();
 serviceFlight.Flights = TestData.Flights;
 
-serviceFlight.GetFlights("Paris", delegate (Flight f, String c)
+serviceFlight.GetFlights("Paris", delegate (Flight f, string c)
 {
     return f.Destination == c;
 });
 
 //expression lampda (fi outh delegate twali " => " )
-serviceFlight.GetFlights("2023/01/01", (Flight f, String c) =>
+serviceFlight.GetFlights("2023/01/01", (Flight f, string c) =>
 {
     return f.FlightDate.Equals(c);
 });
 
+float l=serviceFlight.DurationAverageDel("Paris");
+Console.WriteLine(l);
+
+//test pour IntExtension 
+
+int a = 11;
+a.add(20);
 
 
-// Question 16 et 17
-Action<Plane> FlightDetailsDel = serviceFlight.ShowFlightDetails;
-FlightDetailsDel(TestData.Planes[1]);
+// Pour tester PassengerExtension
+Passenger pas2 = new Staff();
+pas2 = TestData.Staffs[1];
+pas2.UpperFullName();
+Console.WriteLine(pas2.FirstName + " " + pas2.LastName);
 
-Func<String, double> DurationAverageDel = serviceFlight.DurationAverage;
-Console.WriteLine(DurationAverageDel("Paris"));
-
-
-//expression lampda (Question 18)
-//ServiceFlight.ShowFlightDetails( (Plane p) =>
-//{
-//    Console.WriteLine(p);
-//});
 
 
 

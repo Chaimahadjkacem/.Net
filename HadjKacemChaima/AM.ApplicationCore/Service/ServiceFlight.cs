@@ -11,7 +11,42 @@ namespace AM.ApplicationCore.Service
 {
     public class ServiceFlight 
     {
+        //Creation des délégué (question 16)
+        public Action<Plane> FlightDetailsDel { get; set; }
+
+        public Func<string, float> DurationAverageDel { get; set; }
+
+        //Creation de constructeur (question 17) + afectation du délégués au methodes aadeya
+        //  FlightDetailsDel = ShowFlightDetails; maghiir () fel methode !!!!
+        // DurationAverageDel = DurationAverage;
+        // affectation methode lel délégué (question 18)
+        public ServiceFlight() {
+            FlightDetailsDel =(Plane plane ) =>
+            {
+                var query = Flights
+                .Where(f => f.Plane.PlaneId == plane.PlaneId) // jamais trajaa true (si ki nzidhom .PlaneId)
+                .Select(f => new { f.Destination, f.FlightDate });
+                foreach (var item in query)
+                {
+                    Console.WriteLine(item);
+                }
+            }; // affectation du délégué 
+            DurationAverageDel = (string destination) =>
+            {
+                var query = Flights
+                    .Where(f => f.Destination.Equals(destination))
+                    .Average(f => f.EstimatedDuration);
+                return ((float)query);
+            };
+
+        }
+
+
         public List<Flight> Flights { get; set; } = new List<Flight> { };  // Creation et initialisation 
+
+      
+
+    
 
         //Avec for (Question 6)
 
@@ -49,7 +84,7 @@ namespace AM.ApplicationCore.Service
             //2ème mèthode
            var query = Flights
                 .Where(f=>f.Destination == destination)
-                .Select(f=>f.FlightDate).ToList(); // besh tbadel IEnumerable (sortie de query) lel liste 
+                .Select(f=>f.FlightDate).ToList(); // besh tbadel IEnumerable (sortie de query) lel liste (-> cast ) 
             return query;
 
         }
@@ -131,12 +166,12 @@ namespace AM.ApplicationCore.Service
         }
 
         //12
-        public double DurationAverage(string destination)
+        public float DurationAverage(string destination)
         {
             var query = Flights
                 .Where(f => f.Destination.Equals(destination))
                 .Average(f => f.EstimatedDuration);
-            return query;
+            return ((float)query);
         }
 
         //13
@@ -175,26 +210,6 @@ namespace AM.ApplicationCore.Service
             }
         }
 
-       
-
-        //public void ShowFlightDetails(Action<Plane> FlightDetailsDel)
-        //{
-        //    var query = Flights
-        //        .Where(f => f.Plane.Equals(FlightDetailsDel))
-        //        .Select(f => new { f.Destination, f.FlightDate });
-        //    foreach (var item in query)
-        //    {
-        //        Console.WriteLine(item);
-        //    }
-        //}
-
-        //public double DurationAverage(Func<String, float> DurationAverageDel)
-        //{
-        //    var query = Flights
-        //        .Where(f => f.Destination.Equals(DurationAverageDel))
-        //        .Average(f => f.EstimatedDuration);
-        //    return query;
-        //}
 
     }
 }

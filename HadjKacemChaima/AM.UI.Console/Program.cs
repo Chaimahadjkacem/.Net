@@ -69,10 +69,10 @@ a.add(20);
 
 
 // Pour tester PassengerExtension
-Passenger pas2 = new Staff();
-pas2 = TestData.Staffs[1];
-pas2.UpperFullName();
-Console.WriteLine(pas2.FirstName + " " + pas2.LastName);
+//Passenger pas2 = new Staff();
+//pas2 = TestData.Staffs[1];
+//pas2.UpperFullName();
+//Console.WriteLine(pas2.FirstName + " " + pas2.LastName);
 
 
 

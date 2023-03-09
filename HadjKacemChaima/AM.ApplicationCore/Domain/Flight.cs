@@ -25,7 +25,9 @@ namespace AM.ApplicationCore.Domain
         //Ou bien nhot ForeignKey hnee ama t9al9 baad f interface fel recuperation mtaa id taaml moshkla [ForeignKey(nameOf(planeFK))]
         public Plane? Plane { get; set; } // ? besh nhotou nullable
 
-        public IList<Passenger> Passengers { get; set;}
+        //public IList<Passenger> Passengers { get; set;}
+
+        public IList<Ticket> Tickets { get; set; }
 
 
         public override string ToString()

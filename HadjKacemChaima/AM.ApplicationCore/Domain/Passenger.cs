@@ -25,21 +25,27 @@ namespace AM.ApplicationCore.Domain
 
 
         [MinLength(3,ErrorMessage ="FirstName doit contenir au minimum 3 caractères")]
-        [MaxLength(25, ErrorMessage = "FirstName doit contenir au maximum 25 caractères")]        
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        [MaxLength(25, ErrorMessage = "FirstName doit contenir au maximum 25 caractères")]
+
+        //public string FirstName { get; set; }
+        // public string LastName { get; set; } twalii ->
+        public FullName FullName{ get; set; }
+
+    
 
         [MinLength(8)]
         [MaxLength(8)] // ou bien ken jet heya string moush int : [RegularExpression("[0-9]{8}")] yaani 9otlou dakhali ken les chiffres 8 marat 
         public int TelNumber { get; set; }
 
-        public IList<Flight> Flights { get; set; }
+        //public IList<Flight> Flights { get; set; }
+
+        public IList<Ticket> TicketList { get; set; }
 
 
-        public override string ToString()
-        {
-            return FirstName + " " + LastName + " " + TelNumber + " " + BirthDate + " " + EmailAddress + " " + PassportNumber;
-        }
+        //public override string ToString()
+        //{
+          //  return FirstName + " " + LastName + " " + TelNumber + " " + BirthDate + " " + EmailAddress + " " + PassportNumber;
+        //}
 
         //public bool CheckProfile( string prenom , string nom)
         //{
@@ -51,15 +57,15 @@ namespace AM.ApplicationCore.Domain
 
         //    return nom == LastName && prenom == FirstName && email == EmailAddress;
         //}
-        public bool CheckProfile(string prenom, string nom, string email = null)
-        {
-            if (email == null)
-            {
-                return nom == LastName && prenom == FirstName;
-            }
-            return nom == LastName && prenom == FirstName && email == EmailAddress;
+        //public bool CheckProfile(string prenom, string nom, string email = null)
+        //{
+        //    if (email == null)
+        //    {
+        //        return nom == LastName && prenom == FirstName;
+        //    }
+        //    return nom == LastName && prenom == FirstName && email == EmailAddress;
 
-        }
+        //}
 
         public virtual void PassengerType()
         {

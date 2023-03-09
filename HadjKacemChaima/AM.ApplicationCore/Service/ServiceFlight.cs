@@ -185,15 +185,15 @@ namespace AM.ApplicationCore.Service
         }
 
         //14
-        public List<Traveller> SeniorTravellers(Flight flight)
-        {
-            var query = flight.Passengers.OfType<Traveller>()
+        //public List<Traveller> SeniorTravellers(Flight flight)
+        //{
+        //    var query = flight.Passengers.OfType<Traveller>()
                   
-                .OrderBy(p=>p.BirthDate).Take(3).ToList();
-            // ki nheb nhot liste de retour Passenger : List <Passenger> p = new List<Passenger>(query); // yaaml cast implicite fi f liste des passenger yrajaa liste des traveller
-            return query.ToList();
+        //        .OrderBy(p=>p.BirthDate).Take(3).ToList();
+        //    // ki nheb nhot liste de retour Passenger : List <Passenger> p = new List<Passenger>(query); // yaaml cast implicite fi f liste des passenger yrajaa liste des traveller
+        //    return query.ToList();
 
-        }
+        //}
 
         //15
         public void DestinationGroupedFlights()

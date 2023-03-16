@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Interfaces;
 using AM.ApplicationCore.Service;
+using AM.Infrastructure;
 
 //Plane p = new Plane();
 
@@ -74,6 +75,23 @@ a.add(20);
 //pas2.UpperFullName();
 //Console.WriteLine(pas2.FirstName + " " + pas2.LastName);
 
+//instruction pour communiquer avec la base de données  : instance de classe de contexte
+AMContexte aMContexte = new AMContexte();
+/*aMContexte.Flights.Add(new Flight() {
+    Destination = "Tunis", Departure = "Sfax" ,EffectiveArrival = new DateTime(2021,02,01), EstimatedDuration = 100, FlightDate = new DateTime (2020,03,02) ,
+    Plane = new Plane()
+    {
+        Capacity = 100,
+        ManufactureDate = new DateTime(2021,03,02),
+        PlaneType = PlaneType.Boing
+    }
+});
+aMContexte.SaveChanges(); // besh nhez kol shy lel bd */
+
+foreach (var item in aMContexte.Flights.ToList()) //kayenha select * from flights
+{
+    Console.WriteLine(item.FlightId+" "+item.Plane.Capacity+" "+item.Plane.ManufactureDate);
+}
 
 
 

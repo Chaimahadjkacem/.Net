@@ -14,16 +14,24 @@ namespace AM.Infrastructure
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Passenger> Passengers { get; set; }
         public DbSet<Plane> Planes { get; set; }
-    //    public DbSet<Test2> Tests { get; set; }
+       //public DbSet<Test2> Tests { get; set; }
 
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Traveller> Travellers { get; set; }
 
+        //lezem kol classe naamlelha Dbset mteeha besh naamlelha map fel BD
+
+        public DbSet<Seat> Seats { get; set; }
+        public DbSet<Section> Sections { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+
+       
 
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseLazyLoadingProxies();
             optionsBuilder.UseSqlServer(@"Data Source =(localDB)\MSSqlLocalDB; Initial Catalog=ChaimaHadjKacem; Integrated Security=true ");
         }
 
@@ -34,9 +42,13 @@ namespace AM.Infrastructure
             modelBuilder.Entity<Passenger>().ToTable("Passengers");// besh nconfiguriw passenger o nbaloulha esmha (tpt)
             modelBuilder.Entity<Traveller>().ToTable("Travellers");// kifkif (tpt)
             modelBuilder.Entity<Staff>().ToTable("Staffs");// tpt ( kol wahda entité tableau mteeha )
-
             modelBuilder.ApplyConfiguration(new TicketConfiguration());
-           
+
+            //naayet lel classes de configuration 
+            modelBuilder.ApplyConfiguration(new SeatConfiguration());
+            modelBuilder.ApplyConfiguration(new ReservationConfiguration());
+
+
         }
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {

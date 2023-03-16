@@ -36,8 +36,10 @@ namespace AM.ApplicationCore.Domain
 
         public PlaneType PlaneType { get; set; }
 
-        public IList<Flight> Flights { get; set;}
+        //virtual khater aamlna beha relation mabin deux entités 
+        public virtual IList<Flight> Flights { get; set;}
 
+        public virtual List<Seat> Seats { get; set; }
 
         public override string ToString()
         {

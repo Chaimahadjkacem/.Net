@@ -39,17 +39,20 @@ namespace AM.ApplicationCore.Domain
 
         //public IList<Flight> Flights { get; set; }
 
-        public IList<Ticket> TicketList { get; set; }
+        //khater aamlna beha l relation
+        public virtual IList<Ticket> TicketList { get; set; }
 
+
+        public virtual List<Reservation> Reservations { get; set; }
 
         //public override string ToString()
         //{
-          //  return FirstName + " " + LastName + " " + TelNumber + " " + BirthDate + " " + EmailAddress + " " + PassportNumber;
+        //  return FirstName + " " + LastName + " " + TelNumber + " " + BirthDate + " " + EmailAddress + " " + PassportNumber;
         //}
 
         //public bool CheckProfile( string prenom , string nom)
         //{
-           
+
         //    return nom == LastName && prenom == FirstName;
         //}
         //public bool CheckProfile(string prenom, string nom , string email)

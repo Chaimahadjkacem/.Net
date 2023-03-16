@@ -19,15 +19,16 @@ namespace AM.ApplicationCore.Domain
         public DateTime EffectiveArrival { get; set; }
         public int EstimatedDuration { get; set; }
 
-        [ForeignKey("plane")] // foreignKey ou bien [ForeignKey(nameOf(plane))] besh nbadel esm clé etranger 
-        public int ? PlaneFK { get; set; } // nzidha enaa besh najem naaml ForeignKey
+        [ForeignKey("Plane")] // foreignKey ou bien [ForeignKey(nameOf(plane))] besh nbadel esm clé etranger 
+        public int? PlaneFK { get; set; } // nzidha enaa besh najem naaml ForeignKey
 
         //Ou bien nhot ForeignKey hnee ama t9al9 baad f interface fel recuperation mtaa id taaml moshkla [ForeignKey(nameOf(planeFK))]
-        public Plane? Plane { get; set; } // ? besh nhotou nullable
+        public virtual Plane? Plane { get; set; } // ? besh nhotou nullable
 
         //public IList<Passenger> Passengers { get; set;}
 
-        public IList<Ticket> Tickets { get; set; }
+        //zedna virtual khater aamlna beha relation mabinet deux classes 
+        public virtual IList<Ticket> Tickets { get; set; }
 
 
         public override string ToString()

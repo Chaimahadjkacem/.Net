@@ -42,26 +42,26 @@ Passenger pas = new Passenger();
 
 //TP2
 // 5  Lezem f declaration nhotou Classe moush interface
-ServiceFlight serviceFlight = new ServiceFlight();
-serviceFlight.Flights = TestData.Flights;
+//ServiceFlight serviceFlight = new ServiceFlight();
+//serviceFlight.Flights = TestData.Flights;
 
-//Methodes anonymes
-ServiceFlight ServiceFlight = new ServiceFlight();
-serviceFlight.Flights = TestData.Flights;
+////Methodes anonymes
+//ServiceFlight ServiceFlight = new ServiceFlight();
+//serviceFlight.Flights = TestData.Flights;
 
-serviceFlight.GetFlights("Paris", delegate (Flight f, string c)
-{
-    return f.Destination == c;
-});
+//serviceFlight.GetFlights("Paris", delegate (Flight f, string c)
+//{
+//    return f.Destination == c;
+//});
 
-//expression lampda (fi outh delegate twali " => " )
-serviceFlight.GetFlights("2023/01/01", (Flight f, string c) =>
-{
-    return f.FlightDate.Equals(c);
-});
+////expression lampda (fi outh delegate twali " => " )
+//serviceFlight.GetFlights("2023/01/01", (Flight f, string c) =>
+//{
+//    return f.FlightDate.Equals(c);
+//});
 
-float l=serviceFlight.DurationAverageDel("Paris");
-Console.WriteLine(l);
+//float l=serviceFlight.DurationAverageDel("Paris");
+//Console.WriteLine(l);
 
 //test pour IntExtension 
 

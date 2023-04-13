@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace AM.ApplicationCore.Interfaces
 {
-    public interface IServiceFlight
+    //interface de service specifique lezem taaml heritage lel generique !! 
+    public interface IServiceFlight : IService<Flight> 
     {
         public List<DateTime> GetFlightDates(string destination);
         //   public List<Flight> GetFlights(string filterType, string filterValue);

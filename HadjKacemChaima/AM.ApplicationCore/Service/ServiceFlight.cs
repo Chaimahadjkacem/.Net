@@ -1,5 +1,6 @@
 ﻿using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Interfaces;
+using AM.ApplicationCore.Services;
 using System;
 using System.Collections.Generic;
 using System.Configuration.Assemblies;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AM.ApplicationCore.Service
 {
-    public class ServiceFlight 
+    public class ServiceFlight : Service<Flight> , IServiceFlight
     {
         //Creation des délégué (question 16)
         public Action<Plane> FlightDetailsDel { get; set; }
@@ -20,7 +21,10 @@ namespace AM.ApplicationCore.Service
         //  FlightDetailsDel = ShowFlightDetails; maghiir () fel methode !!!!
         // DurationAverageDel = DurationAverage;
         // affectation methode lel délégué (question 18)
-        public ServiceFlight() {
+
+        // yelzem aandou constructeur parametré 
+        public ServiceFlight(IUnitOfWork uow) : base (uow) 
+        {
             FlightDetailsDel =(Plane plane ) =>
             {
                 var query = Flights
@@ -210,7 +214,15 @@ namespace AM.ApplicationCore.Service
             }
         }
 
+        double IServiceFlight.DurationAverage(string destination)
+        {
+            throw new NotImplementedException();
+        }
 
+        public List<Traveller> SeniorTravellers(Flight flight)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

@@ -7,7 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//AddScoped : yasnaa instance à chaque requette http
 builder.Services.AddScoped<IServiceFlight, ServiceFlight>();
+builder.Services.AddScoped<IServicePlane, ServicePlane>();
 //3 lignes nafshom yetaawdou 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddDbContext<DbContext,AMContexte>();

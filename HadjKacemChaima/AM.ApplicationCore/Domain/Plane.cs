@@ -39,6 +39,10 @@ namespace AM.ApplicationCore.Domain
         //virtual khater aamlna beha relation mabin deux entités 
         public virtual IList<Flight> Flights { get; set;}
 
+        //besh ma tetmapeech fel BD
+        [NotMapped]
+        public string Information { get { return Capacity + " " + PlaneId + " " + ManufactureDate + " " + PlaneType; } } // get khaw juste besh na9ra menha + nhot les attributs eli nheb naamlelhom affichage !! " " khaterha string
+
         public virtual List<Seat> Seats { get; set; }
 
         public override string ToString()
